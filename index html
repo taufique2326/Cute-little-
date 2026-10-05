@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorry Bushra ❤️ - From Toffee</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #ffe6eb 0%, #ffb6c1 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      text-align: center;
+      position: relative;
+      animation: floatIn 1s ease-out;
+    }
+    @keyframes floatIn {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    h1 { color: #e63946; font-size: 26px; margin-bottom: 10px; }
+    p { color: #4a4a4a; font-size: 16px; line-height: 1.5; margin-bottom: 20px; }
+    
+    .photo-gallery {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .photo-frame {
+      width: 120px;
+      height: 140px;
+      border-radius: 12px;
+      border: 3px solid #ff4d6d;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .photo-frame:hover { transform: scale(1.08) rotate(2deg); }
+
+    .sorry-btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+      transition: all 0.3s ease;
+    }
+    .sorry-btn:hover { background: #c9184a; transform: scale(1.05); }
+
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff0f3;
+      border-radius: 12px;
+      color: #c9184a;
+      font-weight: bold;
+      animation: fadeIn 0.8s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>I am So Sorry, Bush! 🥺❤️</h1>
+    <p>6 din tak baat nahi ki, maanta hu meri galti hai... Lekin aapka Toffee aapse bohot pyaar karta hai! Please mujhe maaf kar do Madam Ji? 🍬✨</p>
+    
+    <div class="photo-gallery">
+      <!-- Photos yahan add hongi -->
+      <img src="photo1.jpg" alt="Bushra & Taufique" class="photo-frame">
+      <img src="photo2.jpg" alt="Cute Memory" class="photo-frame">
+    </div>
+
+    <button class="sorry-btn" onclick="showLove()">Forgive Toffee? 💖</button>
+
+    <div class="hidden-message" id="loveMessage">
+      Yayyy! Thank you Bush! I promise ab se aisa kabhi nahi hoga. You are my whole world! 🌎❤️✨
+    </div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById('loveMessage').style.display = 'block';
+      // Hearts animation trigger
+      for(let i = 0; i < 20; i++) {
+        createHeart();
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.position = 'fixed';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '100vh';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      heart.style.animation = 'floatUp 3s linear forwards';
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 3000);
+    }
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes floatUp {
+        to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
